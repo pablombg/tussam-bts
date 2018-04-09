@@ -9,7 +9,7 @@ headers = {
     'Authorization': 'Basic aW5mb3R1cy11c2VybW9iaWxlOjJpbmZvdHVzMHVzZXIxbW9iaWxlMg==',
     'deviceid': 'A38-f3e2a984ead95d5j'
 }
-body = '''
+body_template = '''
 <v:Envelope xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
             xmlns:d="http://www.w3.org/2001/XMLSchema"
             xmlns:c="http://schemas.xmlsoap.org/soap/encoding/"
@@ -19,14 +19,15 @@ body = '''
         <n0:getBuses id="o0"
                      c:root="1"
                      xmlns:n0="http://services.infotusws.tussam.com/">
-            <labelLinea i:type="d:string">03</labelLinea>
+            <labelLinea i:type="d:string">{}</labelLinea>
         </n0:getBuses>
     </v:Body>
 </v:Envelope>
 '''
 
 
-def get_positions():
+def get_positions(route):
+    body = body_template.format(route)
     conn = http.client.HTTPConnection("www.infobustussam.com", 9005)
     conn.request("POST", url, body=body, headers=headers)
 

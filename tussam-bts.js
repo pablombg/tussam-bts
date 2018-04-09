@@ -1,3 +1,5 @@
+var route = document.getElementById("route").value;
+
 var points = new ol.layer.Vector();
 
 var map = new ol.Map({
@@ -63,6 +65,12 @@ function httpGetAsync(url, callback) {
     request.send(null);
 }
 
+function changeRoute() {
+    route = document.getElementById("route").value;
+    // Force refresh
+    httpGetAsync("http://localhost:8080/" + route, processPositions)
+}
+
 setInterval(function() {
-    httpGetAsync("http://localhost:8080", processPositions)
+    httpGetAsync("http://localhost:8080/" + route, processPositions)
 }, 5000);

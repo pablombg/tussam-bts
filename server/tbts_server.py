@@ -7,6 +7,8 @@ import tussam_requests as tussam
 class requestHandler(BaseHTTPRequestHandler):
 
     def do_GET(self):
+        route = self.path.lstrip("/")
+
         # Status code
         self.send_response(200)
 
@@ -16,7 +18,7 @@ class requestHandler(BaseHTTPRequestHandler):
         self.end_headers()
 
         # Response data
-        data = tussam.get_positions()
+        data = tussam.get_positions(route)
         self.wfile.write(bytes(data, "utf8"))
         return
 
