@@ -1,3 +1,6 @@
+# tussam-bts
+# License: CC0 1.0 Universal
+
 import xml.etree.ElementTree as ET
 import http.client
 import json

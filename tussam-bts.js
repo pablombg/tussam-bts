@@ -1,3 +1,6 @@
+// tussam-bts
+// License: CC0 1.0 Universal
+
 var route = document.getElementById("route").value;
 
 var points = new ol.layer.Vector();

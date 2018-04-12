@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+# tussam-bts
+# License: CC0 1.0 Universal
+
 from http.server import HTTPServer, BaseHTTPRequestHandler
 import tussam_requests as tussam
 
