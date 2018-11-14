@@ -39,7 +39,7 @@ function renderPoints(positions) {
             scale: 0.5,
             color: '#FF5050',
             crossOrigin: 'anonymous',
-            src: 'https://openlayers.org/en/v4.6.4/examples/data/dot.png'
+            src: 'https://openlayers.org/en/v5.3.0/examples/data/dot.png'
         }))
     });
 
